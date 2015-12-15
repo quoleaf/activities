@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>What Can JavaScript Do?</h1>
+
+<p id="demo1">JavaScript can change HTML content.</p>
+<button type="button" onclick="myFunction1()">Click Me!</button>
+
+<p id="demo">JavaScript can change HTML content.</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
+Click Me!</button><br>
+
+<img id="myImage" onclick="changeImage()" src="img/off.png" width="100" height="180">
+
+<p>Click the light bulb to turn on/off the light.</p>
+
+<p>Please input number between 1 to 10:</p>
+<input id="numb" type="number">
+<button type="button" onclick="myFunction2()">Submit</button>
+<p id="demo2"></p>
+
+<script>
+		function changeImage() {
+   		var image = document.getElementById('myImage');
+    		if (image.src.match("img/on.png")) {
+       		image.src = "img/off.png";
+    		} else {
+      		image.src = "img/on.png";
+   			}
+			}
+
+			function myFunction1(){
+			var x = document.getElementById("demo1");
+			x.style.fontSize = "35px";
+			x.style.color = "red";
+			}
+
+			function myFunction2(){
+				var y, text;
+				y = document.getElementById("numb").value;
+				if(isNaN(y)|| y < 1 || y > 10){
+					text = "Input Not Valid.";
+				} else{
+					text = "Input OK.";
+				}
+				document.getElementById("demo2").innerHTML = text;
+
+			}
+</script>
+
+</body>
+</html>
