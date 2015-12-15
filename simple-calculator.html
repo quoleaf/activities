@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+</head>
+<body>
+		<fieldset>
+			<input id="numb1" type="number" name="numb1" />
+			<input id="numb2" type="number" name="numb2" /><br>
+			
+	
+			<select id="optn" style="margin-top:20px;">
+
+			<option value="default">-select-</option>
+			<option value="+">Add</option>
+			<option value="-">Subtract</option>
+			<option value="*">Multiply</option>
+			<option value="/">Divide</option>
+			</select><br>
+			<input type="button" value="calculate" style="margin-top:20px;" onclick="Calculate()" onclick="validate()" /><br>
+
+			<div style="height:55px; width:400px; border: 1px solid #cccccc; margin-top:30px; background-color:#e3e3e3;" ><p id="result">0.00</p></div>
+		</fieldset>
+
+
+
+<script>
+function validate(){
+	var empty = "0";
+
+	if (numb1 == null){
+		empty = "Please input numbers!";
+	}
+	else if (numb2 == null){
+		empty = "Please input numbers!";
+	}
+	document.getElementById("result").innerHTML = empty
+}
+
+function Calculate(){
+
+	var	solve = 0;
+	var x = document.getElementById("numb1").value;
+	var y = document.getElementById("numb2").value;
+	var z = document.getElementById("optn").value;
+	
+	if (z == "+")
+	{
+		solve = parseInt(x)+parseInt(y);
+	}
+	else if(z == "-")
+	{
+		solve = parseInt(x)-parseInt(y);
+	}
+	else if(z == "*")
+	{
+		solve = parseInt(x)*parseInt(y);
+	}
+	else if(z == "/")
+	{
+		solve = parseFloat(x)/parseFloat(y);
+	}
+
+
+	console.log(solve);
+
+	
+	document.getElementById("result").innerHTML = solve;
+	
+} 
+		
+	
+
+</script>	
+	
+</body>
+</html>
